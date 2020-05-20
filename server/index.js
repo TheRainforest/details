@@ -20,11 +20,11 @@ app.get('/items/:id', (req, res) => {
       console.log(err);
       res.sendStatus(404).end();
     } else {
-      res.send(success[0]).end();
+      res.send(success).end();
     }
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening on port: ${PORT}.`);
+  console.log(`http://localhost:${PORT}`);
 });

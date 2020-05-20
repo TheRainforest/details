@@ -1,7 +1,7 @@
 const Item = require('./database');
 
-const getAllDocuments = (itemId, callback) => {
-  Item.find({ id: itemId }, (err, item) => {
+const getDocument = (itemId, callback) => {
+  Item.findOne({ id: itemId }, (err, item) => {
     if (err) {
       console.log(err);
       callback(err, null);
@@ -11,4 +11,5 @@ const getAllDocuments = (itemId, callback) => {
   });
 };
 
-module.exports = getAllDocuments;
+
+module.exports = getDocument;
