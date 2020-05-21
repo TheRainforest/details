@@ -17,12 +17,10 @@ app.post('/items/', (req, res) => {
   saveDoc(req.body, (err) => {
     if (err) {
       console.log(`error saving: ${err}`);
-      res.status(400);
-      res.end();
+      res.sendStatus(400);
     } else {
       console.log('saved id: ', req.body.id);
-      res.status(201);
-      res.end();
+      res.sendStatus(201);
     }
   });
 });
@@ -32,7 +30,7 @@ app.get('/items/:id', (req, res) => {
   getDoc(itemId, (err, success) => {
     if (err) {
       console.log(`error fetching: ${err}`);
-      res.sendStatus(404).end();
+      res.sendStatus(404);
     } else {
       res.send(success).end();
     }
@@ -44,8 +42,8 @@ app.put('/items/:id', (req, res) => {
   const value = Object.values(req.body);
   updateDoc(req.params.id, key[0], value[0], (err, success) => {
     if (err) {
-      console.log(`error deleteing: ${err}`);
-      res.sendStatus(404).send('cannot update');
+      console.log(`error updating: ${err}`);
+      res.sendStatus(404);
     } else {
       console.log(`updated id: ${success.id}`);
       res.status(200);
@@ -58,7 +56,7 @@ app.delete('/items/:id', (req, res) => {
   deleteDoc(req.params.id, (err, success) => {
     if (err) {
       console.log(`error deleteing: ${err}`);
-      res.sendStatus(404).send('cannot delete');
+      res.sendStatus(404);
     } else {
       console.log(`deleted id: ${success.id}`);
       res.status(200);
