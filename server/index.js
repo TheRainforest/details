@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const { getDoc, createDoc, deleteDoc } = require('../database/controllers');
+const {
+  getDoc, saveDoc, updateDoc, deleteDoc,
+} = require('../database/controllers');
 
 const PORT = 3002;
 
@@ -12,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/../public')));
 
 app.post('/items/', (req, res) => {
-  createDoc(req.body, (err) => {
+  saveDoc(req.body, (err) => {
     if (err) {
-      console.log(`error saving: ${err}`)
+      console.log(`error saving: ${err}`);
       res.status(400);
       res.end();
     } else {
@@ -32,6 +34,21 @@ app.get('/items/:id', (req, res) => {
       console.log(`error fetching: ${err}`);
       res.sendStatus(404).end();
     } else {
+      res.send(success).end();
+    }
+  });
+});
+
+app.put('/items/:id', (req, res) => {
+  const key = Object.keys(req.body);
+  const value = Object.values(req.body);
+  updateDoc(req.params.id, key[0], value[0], (err, success) => {
+    if (err) {
+      console.log(`error deleteing: ${err}`);
+      res.sendStatus(404).send('cannot update');
+    } else {
+      console.log(`updated id: ${success.id}`);
+      res.status(200);
       res.send(success).end();
     }
   });

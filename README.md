@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+######An online retail front end, with a new, production worthy backend.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/AmazonRainforest/product-images
+  - https://github.com/AmazonRainforest/related-products
+  - https://github.com/AmazonRainforest/reviews
+  - https://github.com/AmazonRainforest/proxy-jesse
 
 ## Table of Contents
 
@@ -19,11 +19,11 @@
 
 ####scripts
 
-to | enter
+to: | enter
 :---:|---:
 start nodemon* |`npm run start `
 start webpack**|`npm run build`
-seed DB | `npm run seed`
+seed the DB | `npm run seed`
 run tests| `npm run test`
 check coverage| `npm run test:coverage`
 
@@ -37,8 +37,8 @@ check coverage| `npm run test:coverage`
 |--:|:-:|
 CREATE|/items/
 READ|/items/:id
-UPDATE|
-DELETE|
+UPDATE|/items/:id
+DELETE|/items/:id
 
 
 ## Requirements

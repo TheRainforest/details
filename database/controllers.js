@@ -24,6 +24,19 @@ exports.getDoc = (itemId, callback) => {
   });
 };
 
+exports.updateDoc = (itemId, updateKey, updateValue, callback) => {
+  Item.findOneAndUpdate({ id: itemId },
+    { $set: { [updateKey]: updateValue } }, { new: true, upsert: true },
+    (err, item) => {
+      if (err) {
+        console.log(err);
+        callback(err, null);
+      } else {
+        callback(null, item);
+      }
+    });
+};
+
 exports.deleteDoc = (itemId, callback) => {
   Item.findOneAndDelete({ id: itemId }, (err, item) => {
     if (err) {
