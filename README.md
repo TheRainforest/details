@@ -17,7 +17,29 @@
 
 ## Usage
 
-> Some usage instructions
+####scripts
+
+to | enter
+:---:|---:
+start nodemon* |`npm run start `
+start webpack**|`npm run build`
+seed DB | `npm run seed`
+run tests| `npm run test`
+check coverage| `npm run test:coverage`
+
+
+*will watch _only_ the server, _not_ the DB.
+**in watch mode.
+
+####API
+
+|REST|API ENDPOINTS|
+|--:|:-:|
+CREATE|/items/
+READ|/items/:id
+UPDATE|
+DELETE|
+
 
 ## Requirements
 
@@ -27,6 +49,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - etc
 
 ## Development
+default port 3002
 
 ### Installing Dependencies
 
