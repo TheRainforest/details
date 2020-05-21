@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+######An online retail front end from Stephen's legacy codebase, with a new, production worthy backend.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/AmazonRainforest/product-images
+  - https://github.com/AmazonRainforest/related-products
+  - https://github.com/AmazonRainforest/reviews
+  - https://github.com/AmazonRainforest/proxy-jesse
 
 ## Table of Contents
 
@@ -17,8 +17,57 @@
 
 ## Usage
 
-> Some usage instructions
+####scripts
 
+to: | enter
+:---:|---:
+start nodemon* |`npm run start `
+start webpack**|`npm run build`
+seed the DB | `npm run seed`
+run tests| `npm run test`
+check coverage| `npm run test:coverage`
+
+
+*will watch _only_ the server, _not_ the DB.
+**in watch mode.
+
+####API
+
+|REST|API ENDPOINTS|
+|--:|:-:|
+CREATE|/items/
+READ|/items/:id
+UPDATE|/items/:id
+DELETE|/items/:id
+
+#####Expected responses from READ
+```json
+{
+    "starPercentages": {
+        "one": 1,
+        "two": 1,
+        "three": 1,
+        "four": 1,
+        "five": 1
+    },
+    "productInfo": [],
+    "_id": "5ec5fd1d5ec43cea31d96d14",
+    "id": 1232,
+    "productName": "String",
+    "producer": "String",
+    "answeredQuestions": 3,
+    "numberOfRatings": 5,
+    "price": 1,
+    "inStock": true,
+    "__v": 0
+}
+````
+#####Expected request from UPDATE*
+```json
+{ "anykeyabove": `matching type value` }
+```
+
+*update API can only update one key per request.
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
@@ -27,6 +76,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - etc
 
 ## Development
+default port 3002
 
 ### Installing Dependencies
 
