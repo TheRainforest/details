@@ -1,6 +1,6 @@
 # Project Name
 
-######An online retail front end, with a new, production worthy backend.
+######An online retail front end from Stephen's legacy codebase, with a new, production worthy backend.
 
 ## Related Projects
 
@@ -40,7 +40,34 @@ READ|/items/:id
 UPDATE|/items/:id
 DELETE|/items/:id
 
+#####Expected responses from READ
+```json
+{
+    "starPercentages": {
+        "one": 1,
+        "two": 1,
+        "three": 1,
+        "four": 1,
+        "five": 1
+    },
+    "productInfo": [],
+    "_id": "5ec5fd1d5ec43cea31d96d14",
+    "id": 1232,
+    "productName": "String",
+    "producer": "String",
+    "answeredQuestions": 3,
+    "numberOfRatings": 5,
+    "price": 1,
+    "inStock": true,
+    "__v": 0
+}
+````
+#####Expected request from UPDATE*
+```json
+{ "anykeyabove": `matching type value` }
+```
 
+*update API can only update one key per request.
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
