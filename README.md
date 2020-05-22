@@ -1,6 +1,6 @@
 # Project Name
 
-######An online retail front end from Stephen's legacy codebase, with a new, production worthy backend.
+_An online retail front end from a legacy codebase, with a new, production-worthy backend._
 
 ## Related Projects
 
@@ -29,9 +29,10 @@ check coverage| `npm run test:coverage`
 
 
 *will watch _only_ the server, _not_ the DB.
+
 **in watch mode.
 
-####API
+**API**
 
 |REST|API ENDPOINTS|
 |--:|:-:|
@@ -40,7 +41,7 @@ READ|/items/:id
 UPDATE|/items/:id
 DELETE|/items/:id
 
-#####Expected responses from READ
+**Expected responses from READ**
 ```json
 {
     "starPercentages": {
@@ -62,9 +63,10 @@ DELETE|/items/:id
     "__v": 0
 }
 ````
-#####Expected request from UPDATE*
+**Expected request from UPDATE** 
+*
 ```json
-{ "anykeyabove": `matching type value` }
+{ "anykeyabove": corespondingtype }
 ```
 
 *update API can only update one key per request.
