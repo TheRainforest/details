@@ -17,7 +17,7 @@ _An online retail front end from a legacy codebase, with a new, production-worth
 
 ## Usage
 
-####scripts
+**scripts**
 
 to: | enter
 :---:|---:
