@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const SIZE = 10000000; // 10M
 console.time('done in');
-const writeUsers = fs.createWriteStream('./users.csv');
+const writeUsers = fs.createWriteStream('./detailsSmall.csv');
 writeUsers.write(
   `id,
   productName,
