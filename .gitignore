@@ -24,6 +24,10 @@ coverage
 build/
 dist/
 
+# Secrets
+.env
+*.env
+
 # Database Seed Data
 *.csv
 

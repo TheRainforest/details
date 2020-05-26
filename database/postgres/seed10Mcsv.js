@@ -1,26 +1,11 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const SIZE = 10000; // 10M
+const SIZE = 10000000; // 10M
 console.time('done in');
-const writeUsers = fs.createWriteStream('./detailsSmall.csv');
-writeUsers.write('id,productName,producer,answeredQuestions,numberOfRatings,oneStars,twoStars,threeStars,fourStars,fiveStars,price,inStock,productInfo\n', 'utf8');
+const writeUsers = fs.createWriteStream('./PGdetails.csv');
+writeUsers.write('id|productName|producer|answeredQuestions|numberOfRatings|oneStars|twoStars|threeStars|fourStars|fiveStars|price|inStock|productInfo\n', 'utf8');
 
-//  Item properties (13)
-// ***********************
-// id
-// productName
-// producer
-// answeredQuestions
-// numberOfRatings
-// oneStars
-// twoStars
-// threeStars
-// fourStars
-// fiveStars
-// price
-// inStock
-// productInfo
 
 const generateLargeDataSet = (writer, size, encoding, callback) => {
   let i = size;
@@ -43,10 +28,10 @@ const generateLargeDataSet = (writer, size, encoding, callback) => {
       const producer = faker.company.companyName();
       const productName = faker.commerce.productName();
       const productInfo = [
-        faker.lorem.sentence(),
-        faker.lorem.paragraph(),
+        `"${faker.lorem.sentence()}"`,
+        `"${faker.lorem.paragraph()}"`,
       ];
-      const data = `${id},${productName},${producer},${answeredQuestions},${numberOfRatings},${oneStars},${twoStars},${threeStars},${fourStars},${fiveStars},${price},${inStock},"{${productInfo}}"\n`;
+      const data = `${id}|${productName}|${producer}|${answeredQuestions}|${numberOfRatings}|${oneStars}|${twoStars}|${threeStars}|${fourStars}|${fiveStars}|${price}|${inStock}|{${productInfo}}\n`;
 
       if (i === 0) {
         // Last time!

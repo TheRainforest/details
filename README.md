@@ -80,6 +80,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Development
 default port 3002
 
+**PostGres**
+install and start Postgres, include login information for it per PG* variables in a .env file in root directory per env.sample
+once Postgres is installed run `yarn install` to install necessary packages.
+next run pg
+
 ### Installing Dependencies
 
 From within the root directory:

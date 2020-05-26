@@ -12,16 +12,19 @@
     "seed": "node ./database/seed.js",
     "start": "nodemon ./server/index.js --ignore database/ --ignore client/ --ignore test/",
     "test": "jest",
-    "test:coverage": "jest --verbose --coverage"
+    "test:coverage": "jest --verbose --coverage",
+    "pg:init": " psql -a -f ./database/postgres/schema.sql"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "babel-preset-airbnb": "^5.0.0",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.0",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11",
+    "pg": "^8.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1"
