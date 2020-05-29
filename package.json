@@ -13,12 +13,16 @@
     "start": "nodemon ./server/index.js --ignore database/ --ignore client/ --ignore test/",
     "test": "jest",
     "test:coverage": "jest --verbose --coverage",
-    "pg:init": " psql -a -f ./database/postgres/schema.sql"
+    "pg:init": "psql -a -f ./database/postgres/schema.sql",
+    "pg:seed": "node database/postgress/db.js",
+    "cs:init": "node database/cassandra/index.js",
+    "cs:seed": "cqlsh -k itemdetails -e \"COPY itemdetails.details (id, productName, producer, answeredQuestions, oneStars, twoStars, threeStars, fourStars, fiveStars, numberOfRatings, price, inStock, productInfo) from './CSdetails.csv' WITH DELIMITER = '|' AND HEADER = TRUE;\""
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "babel-preset-airbnb": "^5.0.0",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.5.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.0",

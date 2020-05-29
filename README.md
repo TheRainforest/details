@@ -63,7 +63,7 @@ DELETE|/items/:id
     "__v": 0
 }
 ````
-**Expected request from UPDATE** 
+**Expected request from UPDATE**
 *
 ```json
 { "anykeyabove": corespondingtype }
@@ -80,10 +80,21 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Development
 default port 3002
 
+**Cassandra**
+install and start Cassandra, taking care to use JRE v8
+once Postgres is installed run `yarn install` to install necessary packages.
+run `cs:init`
+followed by `cs:generate` to generate 10M records
+and then `cs:seed` to load up records into the DB.
+_elapsed time on my 2013 MBP ≈ 25 minutes_
+
 **PostGres**
 install and start Postgres, include login information for it per PG* variables in a .env file in root directory per env.sample
 once Postgres is installed run `yarn install` to install necessary packages.
-next run pg
+run `pg:init`
+followed by `pg:generate` to generate 10M records
+and then `pg:seed` to load up records into the DB.
+_elapsed time on my 2013 MBP ≈ 15 minutes_
 
 ### Installing Dependencies
 
